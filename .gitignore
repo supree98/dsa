@@ -1,0 +1,77 @@
+# Default ignored files
+/.idea/workspace.xml
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+.idea/*
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+#.gitignore for Java projects (using eclipse)
+
+# Linux
+# backup files
+*~
+
+# Windows
+# thumbnails
+Thumbs.db
+
+logs/
+
+# Mac OS X
+# metadata
+.DS_Store
+# thumbnails
+._*
+
+# GIT
+.git/
+
+# Java
+*.class
+# packages
+*.jar
+*.war
+*.ear
+
+# Eclipse
+.settings/
+.buildpath
+
+# Logging
+*.log
+
+# jME (binaries)
+*.so
+
+.mvn
+mvnw
+mvnw.cmd
+.run/
