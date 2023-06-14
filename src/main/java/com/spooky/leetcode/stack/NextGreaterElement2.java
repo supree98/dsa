@@ -3,7 +3,7 @@ package com.spooky.leetcode.stack;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class NextGreaterElement {
+public class NextGreaterElement2 {
 
     public int[] nextGreaterElements(int[] nums) {
         int size = nums.length;
@@ -28,7 +28,7 @@ public class NextGreaterElement {
 
     // test i/o
     public static void main(String[] args) {
-        NextGreaterElement nge = new NextGreaterElement();
+        NextGreaterElement2 nge = new NextGreaterElement2();
         int[] input1 = new int[]{1, 2, 1};
         int[] input2 = new int[]{1, 2, 3, 4, 3};
         int[] output1 = nge.nextGreaterElements(input1);
