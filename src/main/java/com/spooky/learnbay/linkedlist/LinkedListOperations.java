@@ -31,6 +31,17 @@ public class LinkedListOperations {
         temp.next = temp.next.next;
     }
 
+    public Node middleNode(Node head) {
+        Node jumpOne = head;
+        Node jumpTwo = head;
+
+        while (jumpTwo != null && jumpTwo.next != null) {
+            jumpOne = jumpOne.next;
+            jumpTwo = jumpTwo.next.next;
+        }
+        return jumpOne;
+    }
+
     public Node reverse(Node head) {
         if (head == null || head.next == null) {
             return head;
@@ -72,8 +83,9 @@ public class LinkedListOperations {
         lo.insertAtEnd(head, 60);
         lo.print(head);
         System.out.println();
-        head = lo.reverse(head);
-        lo.print(head);
+        System.out.println(lo.middleNode(head).data);
+//        head = lo.reverse(head);
+//        lo.print(head);
 //        System.out.println();
 //        lo.delete(head, 50);
 //        lo.print(head);
