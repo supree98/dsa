@@ -8,3 +8,9 @@ Trap Rain Water
 -----Queue-----
 Stack Using Queues
 Queue using Stack
+
+-----List------
+LRU cache
+
+----Queue------
+used for BFT & shortest length
