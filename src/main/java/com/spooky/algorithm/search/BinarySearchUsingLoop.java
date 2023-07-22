@@ -1,6 +1,6 @@
 package com.spooky.algorithm.search;
 
-public class BinarySearchWithLoop {
+public class BinarySearchUsingLoop {
 
     public int search(int[] arr, int val) {
         int left = 0;
@@ -21,7 +21,7 @@ public class BinarySearchWithLoop {
 
     public static void main(String[] args) {
         int[] arr = {1, 3, 6, 10, 13, 15, 22};
-        BinarySearchWithLoop search = new BinarySearchWithLoop();
+        BinarySearchUsingLoop search = new BinarySearchUsingLoop();
         System.out.println(search.search(arr, 3));
     }
 }
