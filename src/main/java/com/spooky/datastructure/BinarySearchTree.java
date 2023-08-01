@@ -62,6 +62,24 @@ public class BinarySearchTree {
         return node;
     }
 
+    public boolean search(int val) {
+        return search(val, root);
+    }
+
+    public boolean search(int val, TreeNode node) {
+        if (node == null) {
+            return false;
+        }
+        if (val == node.val) {
+            return true;
+        }
+        if (val < node.val) {
+            return search(val, node.left);
+        } else {
+            return search(val, node.right);
+        }
+    }
+
     public void inorderTraversal() {
         inorderTraversalRec(root);
     }
@@ -120,5 +138,7 @@ public class BinarySearchTree {
         tree.preorderTraversal();
         System.out.println();
         tree.postorderTraversal();
+        System.out.println();
+        System.out.println(tree.search(86));
     }
 }
