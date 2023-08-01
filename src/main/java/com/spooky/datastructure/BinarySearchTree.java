@@ -46,6 +46,22 @@ public class BinarySearchTree {
         }
     }
 
+    public void addRec(int val) {
+        root = addRec(val, root);
+    }
+
+    public TreeNode addRec(int val, TreeNode node) {
+        if (node == null) {
+            return new TreeNode(val);
+        }
+        if (val < node.val) {
+            node.left = addRec(val, node.left);
+        } else {
+            node.right = addRec(val, node.right);
+        }
+        return node;
+    }
+
     public void inorderTraversal() {
         inorderTraversalRec(root);
     }
@@ -86,6 +102,10 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
+//                         44
+//                13                 74
+//            4        29        45       88
+//                                                98
         BinarySearchTree tree = new BinarySearchTree();
         tree.add(44);
         tree.add(13);
