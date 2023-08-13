@@ -1,4 +1,6 @@
-package com.spooky.datastructure;
+package com.spooky.learnbay.tree;
+
+import com.spooky.datastructure.Queue;
 
 public class BinaryTree {
 
