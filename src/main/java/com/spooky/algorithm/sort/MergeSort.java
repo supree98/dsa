@@ -10,7 +10,7 @@ public class MergeSort {
             return;
         }
         // Divide the arr to 2 sub arrays
-        int midIndex = getMidIndex(arr);
+        int midIndex = arr.length / 2;
         int[] leftSubArr = getSubArr(arr, 0, midIndex - 1);
         int[] rightSubArr = getSubArr(arr, midIndex, arr.length - 1);
         sort(leftSubArr);
@@ -39,10 +39,6 @@ public class MergeSort {
         while (j < rightLength) {
             arr[k++] = rightArr[j++];
         }
-    }
-
-    private int getMidIndex(int[] arr) {
-        return arr.length / 2;
     }
 
     private int[] getSubArr(int[] arr, int left, int right) {
