@@ -6,36 +6,38 @@ public class MergeSort {
 
     // This is also called "Divide and Conquer"
     public void sort(int[] arr) {
-        if (arr.length == 1) {
+        if (arr.length <= 1) {
             return;
         }
         // Divide the arr to 2 sub arrays
         int midIndex = getMidIndex(arr);
-        int[] leftArr = getSubArr(arr, 0, midIndex - 1);
-        int[] rightArr = getSubArr(arr, midIndex, arr.length - 1);
-        sort(leftArr);
-        sort(rightArr);
+        int[] leftSubArr = getSubArr(arr, 0, midIndex - 1);
+        int[] rightSubArr = getSubArr(arr, midIndex, arr.length - 1);
+        sort(leftSubArr);
+        sort(rightSubArr);
 
         // Merge the 2 sub arrays in sorted manner
-        merge(arr, leftArr, rightArr);
+        merge(arr, leftSubArr, rightSubArr);
     }
 
     public void merge(int[] arr, int[] leftArr, int[] rightArr) {
-        int leftPointer = 0;
-        int rightPointer = 0;
-        int resIndex = 0;
-        while (leftPointer < leftArr.length && rightPointer < rightArr.length) {
-            if (leftArr[leftPointer] < rightArr[rightPointer]) {
-                arr[resIndex++] = leftArr[leftPointer++];
+        int leftLength = leftArr.length;
+        int rightLength = rightArr.length;
+        int i = 0;        // pointer for leftArr
+        int j = 0;        // pointer for rightArr
+        int k = 0;        // pointer for resArr
+        while (i < leftLength && j < rightLength) {
+            if (leftArr[i] < rightArr[j]) {
+                arr[k++] = leftArr[i++];
             } else {
-                arr[resIndex++] = rightArr[rightPointer++];
+                arr[k++] = rightArr[j++];
             }
         }
-        while (leftPointer < leftArr.length) {
-            arr[resIndex++] = leftArr[leftPointer++];
+        while (i < leftLength) {
+            arr[k++] = leftArr[i++];
         }
-        while (rightPointer < rightArr.length) {
-            arr[resIndex++] = rightArr[rightPointer++];
+        while (j < rightLength) {
+            arr[k++] = rightArr[j++];
         }
     }
 
