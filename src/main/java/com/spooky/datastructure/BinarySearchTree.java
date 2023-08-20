@@ -62,6 +62,39 @@ public class BinarySearchTree {
         return node;
     }
 
+    public TreeNode delete(int val) {
+        return delete(root, val);
+    }
+
+    private TreeNode delete(TreeNode root, int val) {
+        if (root == null) {
+            return null;
+        }
+        if (val < root.val) {
+            root.left = delete(root.left, val);
+        } else if (val > root.val) {
+            root.right = delete(root.right, val);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            }
+            if (root.right == null) {
+                return root.left;
+            }
+            root.val = getPredecessor(root);
+            root.left = delete(root.left, root.val);   // delete the predecessor from the subtree recursively
+        }
+        return root;
+    }
+
+    private int getPredecessor(TreeNode node) {
+        TreeNode predeccor = node.left;
+        while (predeccor.right != null) {
+            predeccor = predeccor.right;
+        }
+        return predeccor.val;
+    }
+
     public boolean search(int val) {
         return search(val, root);
     }
