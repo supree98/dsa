@@ -152,6 +152,17 @@ public class BinarySearchTree {
         System.out.print(root.val + " ");
     }
 
+    public int height() {
+        return height(root);
+    }
+
+    private int height(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return Math.max(height(node.left), height(node.right)) + 1;
+    }
+
     public static void main(String[] args) {
 //                         44
 //                13                 74
@@ -166,6 +177,7 @@ public class BinarySearchTree {
         tree.add(45);
         tree.add(88);
         tree.add(98);
+        System.out.println(tree.height());
         tree.inorderTraversal();
         System.out.println();
         tree.preorderTraversal();
