@@ -21,15 +21,11 @@ public class CountCompleteTreeNodes {
     }
 
     public int countNodes(TreeNode root) {
-        return countNodes(root, 0);
-    }
-
-    public int countNodes(TreeNode root, int count) {
         if (root == null) {
-            return count;
+            return 0;
         }
-        count = countNodes(root.left, count);
-        count = countNodes(root.right, count);
-        return count + 1;
+        int leftCount = countNodes(root.left);
+        int rightCount = countNodes(root.right);
+        return leftCount + rightCount + 1;
     }
 }
