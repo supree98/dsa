@@ -16,6 +16,21 @@ public class ThreeSum {
     If the sum is less than 0, increment j. If the sum is greater than 0, decrement k.
     After the while loop, iterate through the set and add each triplet to the output vector.
     Return the output vector
+
+    Time complexity:
+    O(N*log(N)) for sorting
+    O(N) for iteration (all pointers will visit the elem only once.
+        (need to update the logic to achieve this by skipping the i, j, k if next is duplicate)
+        like:
+        if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+        }
+        while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
      */
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
