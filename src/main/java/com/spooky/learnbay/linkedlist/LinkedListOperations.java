@@ -68,26 +68,58 @@ public class LinkedListOperations {
         }
     }
 
+    public Node merge(Node head1, Node head2) {
+//        while (head2 != null) {
+//            Node temp1 = head1.next;
+//            Node temp2 = head2.next;
+//
+//            head1.next = head2;
+//            head2.next = temp1;
+//
+//            head1 = temp1;
+//            head2 = temp2;
+//        }
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        head1.next = merge(head2, head1.next);
+        return head1;
+    }
+
     // test
     public static void main(String[] args) {
         LinkedListOperations lo = new LinkedListOperations();
-        Node head = new Node(10);
+//        Node head = new Node(10);
 //        head = lo.insertAtBeginning(head, 20);
 //        head = lo.insertAtBeginning(head, 30);
 //        head = lo.insertAtBeginning(head, 40);
 
-        lo.insertAtEnd(head, 20);
-        lo.insertAtEnd(head, 30);
-        lo.insertAtEnd(head, 40);
-        lo.insertAtEnd(head, 50);
-        lo.insertAtEnd(head, 60);
-        lo.print(head);
-        System.out.println();
-        System.out.println(lo.middleNode(head).data);
+//        lo.insertAtEnd(head, 20);
+//        lo.insertAtEnd(head, 30);
+//        lo.insertAtEnd(head, 40);
+//        lo.insertAtEnd(head, 50);
+//        lo.insertAtEnd(head, 60);
+//        lo.print(head);
+//        System.out.println();
+//        System.out.println(lo.middleNode(head).data);
 //        head = lo.reverse(head);
 //        lo.print(head);
 //        System.out.println();
 //        lo.delete(head, 50);
 //        lo.print(head);
+
+        Node head1 = new Node(1);
+        head1.next = new Node(2);
+        head1.next.next = new Node(3);
+
+        Node head2 = new Node(4);
+        head2.next = new Node(5);
+        head2.next.next = new Node(6);
+
+        lo.merge(head1, head2);
+        lo.print(head1);
     }
 }
