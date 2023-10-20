@@ -1,4 +1,4 @@
-package com.spooky.dynamicprogramming;
+package com.spooky.learnbay.dp;
 
 import java.util.Arrays;
 
