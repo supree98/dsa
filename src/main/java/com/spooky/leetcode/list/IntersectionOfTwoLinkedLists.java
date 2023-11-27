@@ -1,6 +1,17 @@
 package com.spooky.leetcode.list;
 
 public class IntersectionOfTwoLinkedLists {
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
@@ -38,15 +49,5 @@ public class IntersectionOfTwoLinkedLists {
             headB = headB.next;
         }
         return null;
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
     }
 }
