@@ -1,4 +1,4 @@
-package com.spooky.algorithm.backtracking;
+package com.spooky.leetcode.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;

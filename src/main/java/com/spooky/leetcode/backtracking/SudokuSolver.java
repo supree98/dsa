@@ -1,4 +1,4 @@
-package com.spooky.algorithm.backtracking;
+package com.spooky.leetcode.backtracking;
 
 public class SudokuSolver {
 
