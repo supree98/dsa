@@ -1,4 +1,4 @@
-package com.spooky.learnbay.sort;
+package com.spooky.leetcode.interval;
 
 import java.util.Arrays;
 
