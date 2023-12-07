@@ -1,16 +1,16 @@
 package com.spooky.leetcode.array;
 
 public class RemoveDuplicatesFromSortedArray {
-
     public int removeDuplicates(int[] nums) {
-        int left = 0;
-        for (int right = 1; right < nums.length; right++) {
-            if (nums[left] != nums[right]) {
-                // go to next for left and copy the num from right
-                left++;
-                nums[left] = nums[right];
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int index = 1;    // position to copy the value from i
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[index++] = nums[i];
             }
         }
-        return left + 1;
+        return index;
     }
 }
