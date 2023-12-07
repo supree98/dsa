@@ -3,13 +3,14 @@ package com.spooky.leetcode.array;
 public class RemoveDuplicatesFromSortedArray {
 
     public int removeDuplicates(int[] nums) {
-        int index = 0;     // tells, where to insert the newly found unique value
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[index] != nums[i]) {
-                index++;
-                nums[index] = nums[i];
+        int left = 0;
+        for (int right = 1; right < nums.length; right++) {
+            if (nums[left] != nums[right]) {
+                // go to next for left and copy the num from right
+                left++;
+                nums[left] = nums[right];
             }
         }
-        return index + 1;
+        return left + 1;
     }
 }
