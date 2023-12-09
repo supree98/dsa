@@ -32,15 +32,21 @@ public class SpiralMatrix {
             }
             right--;
 
-            for (int k = right; k >= left; k--) {
-                res.add(matrix[bottom][k]);
+            // need this if because top was incremented above
+            if (top <= bottom) {
+                for (int k = right; k >= left; k--) {
+                    res.add(matrix[bottom][k]);
+                }
+                bottom--;
             }
-            bottom--;
 
-            for (int l = bottom; l >= top; l--) {
-                res.add(matrix[l][left]);
+            // need this if because right was decremented above
+            if (left <= right) {
+                for (int l = bottom; l >= top; l--) {
+                    res.add(matrix[l][left]);
+                }
+                left++;
             }
-            left++;
         }
 
         return res;
